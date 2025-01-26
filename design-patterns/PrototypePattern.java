@@ -30,6 +30,29 @@ class WordDocument implements Template{
     
 }
 
+class PDFDocument implements Template{
+
+    String textStype;
+    String username;
+
+    public PDFDocument(String textStype, String username) {
+        this.textStype = textStype;
+        this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "WordDocument [textStype=" + textStype + ", username=" + username + "]";
+    }
+
+
+    @Override
+    public Template createTemplate() {
+        return new PDFDocument(this.textStype, this.username);
+    }
+    
+}
+
 public class PrototypePattern {
     public static void main(String[] args) {
         WordDocument doc1 = new WordDocument("Email writing on AI", "GPT ");
@@ -39,5 +62,10 @@ public class PrototypePattern {
 
         WordDocument template1 = (WordDocument)doc1.createTemplate();
         System.out.println("Tempalte: " + template1.username);
+
+        PDFDocument pdf = new PDFDocument("Salary slip", "my username");
+
+        PDFDocument newPdf = (PDFDocument)pdf.createTemplate();
+        System.out.println("Tempalte: " + newPdf.username);
     }
 }
