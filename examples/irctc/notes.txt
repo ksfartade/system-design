@@ -1,0 +1,62 @@
+funcational requirements: 
+1. Search train
+2. List Trains for given search criteria.
+3. Book ticket of multiple types.
+4. payment.
+5. Notification for each stage.
+6. Cancel Ticket.
+7. User Account.
+
+
+
+Non-funcational requirements:
+1. Available: 
+2. Highly Consistent: 
+3. Low latency while search: 
+
+
+Life cycle: 
+1. Search Train.
+2. Book ticket.
+3. Cancel train:
+4. Notification: 
+
+
+
+
+Tables: 
+1. User: 
+- name | id.
+
+2. Train:
+- train number | start station: FK(Station) | end station: FK(Station)
+
+
+3. Station: 
+- station numbe | name.
+
+
+4. Route:
+- Train1 | route_name | time_required | Available_days
+- Train1 | route_name | time_required | Available_days
+
+
+5. StationOrder:
+- order | route(FK Route) | station(FK Station) | arrival_time | departure_time
+
+
+
+Ticket booking:
+1. Seat:
+seat_number| Coach | type | status(booked or not)
+
+2. Coach: 
+train | Route | number | type(AC, SL)
+
+3. Booking:
+Seat | Date | start_station | end_station | status(Pending, cnf)
+
+
+4. Ticket: 
+Booking | User | fare
+
