@@ -58,5 +58,5 @@ Seat | Date | start_station | end_station | status(Pending, cnf)
 
 
 4. Ticket: 
-Booking | User | fare
+Booking | User | fare | timestamp
 
